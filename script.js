@@ -2,21 +2,44 @@
 function getComputerChoice() {
   let randomNumber = (Math.random() * 100 + 1);
   if (randomNumber <= 1/3 * 100) {
+    console.log("Computer picked Rock!");
     return "rock"
   } else if (randomNumber >= 2/3 * 100) {
+    console.log("Computer picked Paper!");
     return "paper"
   } else {
+    console.log("Computer picked Scissors!");
     return "scissors"
   }
 }
 
-// human choice logic
-function getHumanChoice() {
-  let userInput = prompt("Pick 'Rock', 'Paper' or 'Scissors'.");
-  userInput = userInput.toLowerCase();
-  console.log(userInput);
-  return userInput
+function clickRock() {
+  console.log("You picked Rock!")
+  let humanChoice = "rock";
+  playGame(humanChoice);
 }
+
+function clickPaper() {
+  console.log("You picked Paper!")
+  let humanChoice = "paper";
+  playGame(humanChoice);
+}
+
+function clickScissors() {
+  console.log("You picked Scissors!")
+  let humanChoice = "scissors";
+  playGame(humanChoice);
+}
+
+// event listeners
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", clickRock);
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", clickPaper);
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", clickScissors);
 
 // player scores
 let humanScore = 0;
@@ -25,7 +48,6 @@ let computerScore = 0;
 
 // single round logic
 function playGame(humanChoice, computerChoice) {
-  humanChoice = getHumanChoice();
   computerChoice = getComputerChoice();
 
   if (computerChoice === "rock") {
@@ -63,21 +85,4 @@ function playGame(humanChoice, computerChoice) {
       console.log("It's a tie! You both picked Scissors!")
     }   
   }
-}
-
-// playGame();
-
-// play 5 rounds logic
-for (let i = 1; i < 5; i++) {
-  playGame()
-  console.log("Human Score: " + humanScore);
-  console.log("Computer Score: " + computerScore);
-}
-
-if (humanScore > computerScore) {
-  console.log("Game over! You won!")
-} else if (computerScore > humanScore) {
-  console.log("Game over! You lost!")
-} else {
-  console.log("Game over! It's a tie!")
 }
