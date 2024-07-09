@@ -31,6 +31,10 @@ function clickScissors() {
   playGame(humanChoice);
 }
 
+// player scores
+let humanScore = 0;
+let computerScore = 0;
+
 // event listeners
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", clickRock);
@@ -40,11 +44,6 @@ paper.addEventListener("click", clickPaper);
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", clickScissors);
-
-// player scores
-let humanScore = 0;
-let computerScore = 0;
-
 
 // single round logic
 function playGame(humanChoice, computerChoice) {
@@ -85,4 +84,10 @@ function playGame(humanChoice, computerChoice) {
       console.log("It's a tie! You both picked Scissors!")
     }   
   }
+
+  let computerScoreText = document.querySelector("#computer-score");
+  computerScoreText.textContent = `Computer Score: ${computerScore}`;
+
+  let humanScoreText = document.querySelector("#human-score");
+  humanScoreText.textContent = `Player Score: ${humanScore}`;
 }
