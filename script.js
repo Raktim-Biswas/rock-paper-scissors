@@ -19,8 +19,8 @@ function getHumanChoice() {
 }
 
 // player scores
-humanScore = 0;
-computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
 
 // single round logic
@@ -65,25 +65,19 @@ function playGame(humanChoice, computerChoice) {
   }
 }
 
+// playGame();
+
 // play 5 rounds logic
-for (let i = 0; i <= 5; i++) {
-  playRound()
+for (let i = 1; i < 5; i++) {
+  playGame()
   console.log("Human Score: " + humanScore);
   console.log("Computer Score: " + computerScore);
 }
 
 if (humanScore > computerScore) {
   console.log("Game over! You won!")
-} else if (computerScore > humanChoice) {
+} else if (computerScore > humanScore) {
   console.log("Game over! You lost!")
 } else {
   console.log("Game over! It's a tie!")
 }
-
-playGame();
-
-
-
-
-
-
