@@ -27,7 +27,6 @@ function clickPaper() {
   let humanChoiceText = document.querySelector("#human-choice");
   humanChoiceText.textContent = 'You picked Paper!';
 
-  
   let computerChoice = getComputerChoice();
   let computerChoiceText = document.querySelector("#computer-choice");
   computerChoiceText.textContent = `Computer picked ${computerChoice}!`;
@@ -41,7 +40,6 @@ function clickScissors() {
   let humanChoiceText = document.querySelector("#human-choice");
   humanChoiceText.textContent = 'You picked Scissors!';
 
-  
   let computerChoice = getComputerChoice();
   let computerChoiceText = document.querySelector("#computer-choice");
   computerChoiceText.textContent = `Computer picked ${computerChoice}!`;
@@ -55,16 +53,6 @@ function clickScissors() {
 let humanScore = 0;
 let computerScore = 0;
 
-// event listeners
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", clickRock);
-
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", clickPaper);
-
-const scissors = document.querySelector("#scissors");
-scissors.addEventListener("click", clickScissors);
-
 // single round logic
 function playGame(humanChoice, computerChoice) {
   if (humanChoice === "rock") {
@@ -72,7 +60,7 @@ function playGame(humanChoice, computerChoice) {
       console.log("It's a tie! You both picked Rock")
     } else if (computerChoice === "paper") {
       console.log("You lose! Paper beats Rock")
-    } else if (computerChoice === "Scissors") {
+    } else if (computerChoice === "scissors") {
       console.log("You win! Rock beats Scissors!")
     }
   }
@@ -82,7 +70,7 @@ function playGame(humanChoice, computerChoice) {
       console.log("You win! Paper beats Rock!")
     } else if (computerChoice === "paper") {
       console.log("It's a tie! You both picked Paper")
-    } else if (computerChoice === "Scissors") {
+    } else if (computerChoice === "scissors") {
       console.log("You lose! Scissors beats Paper")
     }
   }
@@ -99,6 +87,16 @@ function playGame(humanChoice, computerChoice) {
 
   updateScore();
 }
+
+// event listeners
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", clickRock);
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", clickPaper);
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", clickScissors);
 
 // updates scores
 function updateScore() {
