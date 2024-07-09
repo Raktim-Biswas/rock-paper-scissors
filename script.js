@@ -123,7 +123,6 @@ scissors.addEventListener("click", clickScissors);
 const gameOutcome = document.querySelector("#game-outcome");
 let computerChoiceText = document.querySelector("#computer-choice");
 let humanChoiceText = document.querySelector("#human-choice");
-let gameResult = document.querySelector("#game-result");
 let computerScoreText = document.querySelector("#computer-score");
 let humanScoreText = document.querySelector("#human-score");
 
